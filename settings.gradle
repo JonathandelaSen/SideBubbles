@@ -1,0 +1,3 @@
+include ':sidebubbles'
+include ':app'
+rootProject.name = "SideBubblesLib"
