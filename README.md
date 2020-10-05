@@ -5,9 +5,7 @@
 
 Android library to provide a sticky side menu with options in form of bubbles.
 
-![Video usage](/Screenshots/SideBubbles.jpg?raw=true)
-![Screenshot menu open](/Screenshots/SideBubbles.jpg?raw=true)
-![Screenshot menu close](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![Video usage](/Screenshots/SideBubbles%20real%20use.gif?raw=true)
 
 
 
