@@ -5,7 +5,9 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.RelativeLayout
 import androidx.core.content.ContextCompat
+import kotlinx.android.synthetic.main.side_bubbles_button.view.*
 import kotlinx.android.synthetic.main.side_bubbles_item.view.*
+import kotlinx.android.synthetic.main.side_bubbles_item.view.ivIcon
 
 
 internal class SideBubblesItem : RelativeLayout {
@@ -43,10 +45,10 @@ internal class SideBubblesItem : RelativeLayout {
     }
 
 
-    fun set(icIcon: Int, icColor: Int, bgColor: Int) {
+    fun set(icIcon: Int, bgColor: Int) {
         ivIcon.setImageDrawable(ContextCompat.getDrawable(context, icIcon))
-        ivIcon.setColorFilter(ContextCompat.getColor(context, icColor), android.graphics.PorterDuff.Mode.MULTIPLY);
-        flRoot.backgroundTintList = ContextCompat.getColorStateList(context, bgColor)
+        //flRoot.backgroundTintList = ContextCompat.getColorStateList(context, bgColor)
+        flRoot.background.setTint(bgColor)
     }
 
 

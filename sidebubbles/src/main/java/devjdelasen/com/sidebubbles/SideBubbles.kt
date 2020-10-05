@@ -12,6 +12,7 @@ import android.view.animation.*
 import android.widget.RelativeLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.side_bubbles.view.*
 
 
@@ -38,8 +39,8 @@ class SideBubbles : RelativeLayout {
     private var runnableRunnerStartFadeOut: Runnable? = null
     private var isOpenAnimationOn = false
     private var isClosingAnimation = false
-    private var defaultBgColor: Int = R.color.colorAccent
-    private var defaultIconColor: Int = R.color.white
+    private var bgColor: Int = -1
+    private var menuIconColor: Int = -1
     private var listener: OnClickItemListener? = null
 
 
@@ -52,8 +53,8 @@ class SideBubbles : RelativeLayout {
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
         val ta = context.obtainStyledAttributes(attrs, R.styleable.SideBubbles, 0, 0)
         try {
-            defaultBgColor = ta.getInt(R.styleable.SideBubbles_side_bubbles_menu_color, R.color.colorAccent)
-            defaultIconColor = ta.getInt(R.styleable.SideBubbles_side_bubbles_menu_tint_icons_color, R.color.white)
+            menuIconColor = ta.getColor(R.styleable.SideBubbles_side_bubbles_menu_color, ContextCompat.getColor(context, R.color.white))
+            bgColor = ta.getColor(R.styleable.SideBubbles_side_bubbles_bg_color, ContextCompat.getColor(context, R.color.colorPrimary))
         } finally {
             ta.recycle()
         }
@@ -75,12 +76,12 @@ class SideBubbles : RelativeLayout {
     }
 
     fun addItem(id: String, icIcon: Int) {
-        addItem(id, icIcon, defaultIconColor, defaultBgColor)
+        addItem(id, icIcon, bgColor)
     }
 
-    fun addItem(id: String, icIcon: Int, icColor: Int, bgColor: Int) {
+    fun addItem(id: String, icIcon: Int, bgColor: Int) {
         val item = SideBubblesItem(context)
-        item.set(icIcon, icColor, bgColor)
+        item.set(icIcon, bgColor)
         item.tag = id
         item.visibility = View.GONE
 
@@ -125,7 +126,7 @@ class SideBubbles : RelativeLayout {
     }
 
     private fun setDefaultView() {
-        sbb.set(defaultIconColor, defaultBgColor)
+        sbb.set(menuIconColor, bgColor)
     }
 
     private fun getConstraints(id: Int, idToBeAbove: Int): ConstraintSet {

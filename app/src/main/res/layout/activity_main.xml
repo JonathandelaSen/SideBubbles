@@ -12,6 +12,8 @@
         android:id="@+id/sideBubbles"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:side_bubbles_bg_color="@color/colorAccent"
+        app:side_bubbles_menu_color="@color/white"
         />
 
 

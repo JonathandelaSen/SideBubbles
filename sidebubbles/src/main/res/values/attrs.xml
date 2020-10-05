@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="SideBubbles">
         <attr name="side_bubbles_menu_color" format="color"/>
-        <attr name="side_bubbles_menu_tint_icons_color" format="color"/>
+        <attr name="side_bubbles_bg_color" format="color"/>
     </declare-styleable>
     <declare-styleable name="SideBubblesButton">
     </declare-styleable>

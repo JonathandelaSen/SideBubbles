@@ -43,10 +43,15 @@ internal class SideBubblesButton : ConstraintLayout {
         View.inflate(context, R.layout.side_bubbles_button, this)
     }
 
-    fun set(icIcon: Int, color: Int) {
-        ImageViewCompat.setImageTintList(ivIcon, ColorStateList.valueOf(ContextCompat.getColor(context, icIcon)));
-        vCircle.backgroundTintList = ContextCompat.getColorStateList(context, color)
-        vBase.backgroundTintList = ContextCompat.getColorStateList(context, color)
+    fun set(icColor: Int, bgColor: Int) {
+        ImageViewCompat.setImageTintList(ivIcon, ColorStateList.valueOf(icColor));
+        //vCircle.backgroundTintList = ContextCompat.getColorStateList(context, bgColor)
+        vCircle.background.setTint(bgColor)
+
+
+        //vBase.backgroundTintList = ContextCompat.getColorStateList(context, bgColor)
+        vBase.background.setTint(bgColor)
+
     }
 
 
