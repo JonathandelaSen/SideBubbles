@@ -84,8 +84,8 @@ sideBubbles.setClickItemListener(object: SideBubbles.OnClickItemListener {
 
 ## Features ✅
 
-* Click to open
-* Long click and slide to select
+- [x] Click to open
+- [x] Long click and slide to select
 
 
 ## Next 🚀
