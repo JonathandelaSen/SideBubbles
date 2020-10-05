@@ -8,6 +8,8 @@ Android library to provide a sticky side menu with options in form of bubbles.
 
 ## Instalation 🛠
 
+### Gradle
+
 Add it in your root build.gradle at the end of repositories:
 
 	allprojects {
@@ -24,14 +26,29 @@ Add the dependency
 	        implementation 'com.github.JonathandelaSen:SideBubbles:0.0.1'
 	}
   
+  ### Maven
   
+  	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
 
-## Usage 👨🏻‍💻
+
+	<dependency>
+	    <groupId>com.github.JonathandelaSen</groupId>
+	    <artifactId>SideBubbles</artifactId>
+	    <version>Tag</version>
+	</dependency>
+	
+
+## Usage 📲
 
 
 Set the layout
 
-```
+```XML
 <devjdelasen.com.sidebubbles.SideBubbles
         android:id="@+id/sideBubbles"
         android:layout_width="match_parent"
@@ -45,7 +62,7 @@ Set the layout
 
 Set the bubbles
 
-```
+```kotlin
 sideBubbles.addItem("chat", R.drawable.ic_chat, ContextCompat.getColor(this, R.color.colorAccent))
 sideBubbles.addItem("geo", R.drawable.ic_geo, ContextCompat.getColor(this, R.color.colorAccent))
 sideBubbles.addItem("ice_cream", R.drawable.ic_ice_cream)
@@ -56,6 +73,7 @@ sideBubbles.setClickItemListener(object: SideBubbles.OnClickItemListener {
 })
         
 ```
+
 
 #### Enjoy 🎉
 
@@ -68,6 +86,8 @@ sideBubbles.setClickItemListener(object: SideBubbles.OnClickItemListener {
 * Different animations
 * Left side support
 
-```
-Da un ejemplo
-```
+
+
+
+## Author
+👨🏻‍💻  [Jonnie](https://www.instagram.com/devjdelasen/)
