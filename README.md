@@ -79,9 +79,13 @@ sideBubbles.setClickItemListener(object: SideBubbles.OnClickItemListener {
 
 
 
+## Features ✅
+
+* Click to open
+* Long click and slide to select
 
 
-## RoadMap ✅
+## Next 🚀
   
 * Different animations
 * Left side support
