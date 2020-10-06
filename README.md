@@ -2,10 +2,11 @@
 
 [![](https://jitpack.io/v/JonathandelaSen/SideBubbles.svg)](https://jitpack.io/#JonathandelaSen/SideBubbles)
 
+![Video usage](/Screenshots/SideBubbles.gif?raw=true)
 
 Android library to provide a sticky side menu with options in form of bubbles.
 
-![Video usage](/Screenshots/SideBubbles%20real%20use.gif?raw=true)
+![Video usage](/Screenshots/SideBubbles_slide.gif?raw=true)
 
 
 
