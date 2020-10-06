@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.side_bubbles.view.*
 class SideBubbles : RelativeLayout {
 
 
+    private val ONE_SEC: Long = 1000
     private val TIME_MENU_OPENED: Long = 1800
     private val START_ANIMATION_TIME_OFFSET_INCREMENT_START_ITEM_ANIM = 50
     private val START_ANIMATION_TIME_OFFSET_DECREMENT_FINISH_ITEM_ANIM = 200
@@ -35,14 +36,13 @@ class SideBubbles : RelativeLayout {
 
     private var type: Int = Types.SB_DEFAULT.value
     private var items: ArrayList<SideBubblesItem> = ArrayList()
-    private var handlerLongClick: Handler? = null
+    private var handlerLongClick: Handler? = Handler()
     private var runnableRunnerStartFadeOut: Runnable? = null
     private var isOpenAnimationOn = false
     private var isClosingAnimation = false
     private var bgColor: Int = -1
     private var menuIconColor: Int = -1
     private var listener: OnClickItemListener? = null
-
 
 
 
@@ -155,23 +155,29 @@ class SideBubbles : RelativeLayout {
     }
 
     private fun setOpenMenuTouchListener() {
+        var isLongPress = false
+        val mLongPressed = Runnable {
+            isLongPress = true
+            Log.i("HnbActivity onTouch", "Runnable Long press!")
+            starOpenAnimations()
+        }
+        val doubleTapPrevent = Runnable {
+            clRoot.isEnabled = true
+        }
+        val doubleTapHandler: Handler? = Handler()
+
+
         clRoot.setOnTouchListener(object : View.OnTouchListener {
-
-            var mLongPressed = Runnable {
-                isLongPress = true
-                Log.i("HnbActivity onTouch", "Runnable Long press!")
-                starOpenAnimations()
-            }
-            var isLongPress = false
-
 
             override fun onTouch(view: View?, event: MotionEvent?): Boolean {
                 when (event?.action) {
                     MotionEvent.ACTION_DOWN -> {
-                        handlerLongClick?.postDelayed(mLongPressed, ViewConfiguration.getLongPressTimeout().toLong()/2);
+                        handlerLongClick?.postDelayed(mLongPressed, ONE_SEC/4);
                         return true
                     }
                     MotionEvent.ACTION_UP -> {
+                        clRoot.isEnabled = false
+                        doubleTapHandler?.postDelayed(doubleTapPrevent, 200);
                         handlerLongClick?.removeCallbacks(mLongPressed);
                         if (isLongPress) {
                             Log.i("HnbActivity onTouch", "Long press!")
@@ -191,7 +197,6 @@ class SideBubbles : RelativeLayout {
         })
 
     }
-
 
     private fun starOpenAnimations() {
         activeMenuAnimation()
@@ -219,7 +224,6 @@ class SideBubbles : RelativeLayout {
 
                 override fun onAnimationStart(p0: Animation?) {
                     if (index == items.size-1) {
-                        handlerLongClick = Handler()
                         runnableRunnerStartFadeOut = Runnable {
                             isClosingAnimation = true
                             Log.i("HnbActivity", "starOpenAmimations getFadeOut onAnimationStart isClosingAnimation = true")
