@@ -27,7 +27,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 
 	dependencies {
-	        implementation 'com.github.JonathandelaSen:SideBubbles:0.0.1'
+	        implementation 'com.github.JonathandelaSen:SideBubbles:v0.0.3'
 	}
   
   ### Maven
