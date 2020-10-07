@@ -212,7 +212,7 @@ class SideBubbles : RelativeLayout {
                 }
 
                 override fun onAnimationEnd(p0: Animation?) {
-                    item.visibility = View.INVISIBLE
+                    item.visibility = View.GONE
                     if (index == 0) {
                         isOpenAnimationOn = false
                         isClosingAnimation = false
@@ -254,7 +254,7 @@ class SideBubbles : RelativeLayout {
                 }
 
                 override fun onAnimationEnd(p0: Animation?) {
-                    item.visibility = View.INVISIBLE
+                    item.visibility = View.GONE
                     if (index == 0) {
                         Log.i("HnbActivity", "startCloseAnimations onAnimationEnd isClosingAnimation = false")
                         isClosingAnimation = false
@@ -311,7 +311,7 @@ class SideBubbles : RelativeLayout {
     }
 
     private fun activeMenuAnimation() {
-        sbb.animate()
+        clRoot.animate()
             .setInterpolator(AccelerateInterpolator())
             .setDuration(100)
             .translationX(0f)
@@ -319,7 +319,7 @@ class SideBubbles : RelativeLayout {
     }
 
     private fun deactivateMenuAnimation() {
-        sbb.animate()
+        clRoot.animate()
             .setInterpolator(AccelerateInterpolator())
             .setDuration(100)
             .translationX(convertToPx(20).toFloat())

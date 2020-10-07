@@ -15,6 +15,7 @@
         android:layout_alignParentEnd="true"
         android:clipToPadding="false"
         android:layout_alignParentBottom="true"
+        android:translationX="20dp"
         >
 
         <devjdelasen.com.sidebubbles.SideBubblesButton
@@ -23,7 +24,6 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:translationX="20dp"
             />
 
 
