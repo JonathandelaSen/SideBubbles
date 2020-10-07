@@ -2,10 +2,11 @@
 
 [![](https://jitpack.io/v/JonathandelaSen/SideBubbles.svg)](https://jitpack.io/#JonathandelaSen/SideBubbles)
 
+![Video usage](/Screenshots/SideBubbles.gif?raw=true)
 
 Android library to provide a sticky side menu with options in form of bubbles.
 
-![Video usage](/Screenshots/SideBubbles%20real%20use.gif?raw=true)
+![Video usage](/Screenshots/SideBubbles_slide.gif?raw=true)
 
 
 
@@ -26,7 +27,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 
 	dependencies {
-	        implementation 'com.github.JonathandelaSen:SideBubbles:0.0.1'
+	        implementation 'com.github.JonathandelaSen:SideBubbles:v0.0.3'
 	}
   
   ### Maven
