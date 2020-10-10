@@ -46,7 +46,7 @@ internal class SideBubblesButton : ConstraintLayout {
     fun set(icColor: Int, bgColor: Int) {
         ImageViewCompat.setImageTintList(sb_ivIcon, ColorStateList.valueOf(icColor));
         //sb_vCircle.backgroundTintList = ContextCompat.getColorStateList(context, bgColor)
-        sb_vCircle.background.setTint(bgColor)
+        //sb_vCircle.background.setTint(bgColor)
 
 
         //vBase.backgroundTintList = ContextCompat.getColorStateList(context, bgColor)

@@ -79,9 +79,9 @@ class SideBubbles : RelativeLayout {
         addItem(id, icIcon, bgColor)
     }
 
-    fun addItem(id: String, icIcon: Int, bgColor: Int) {
+    fun addItem(id: String, icIcon: Int, bgIconColor: Int) {
         val item = SideBubblesItem(context)
-        item.set(icIcon, bgColor)
+        item.set(icIcon, bgIconColor)
         item.tag = id
         item.visibility = View.GONE
 
