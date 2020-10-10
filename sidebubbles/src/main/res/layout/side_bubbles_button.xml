@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/rlRoot"
+    android:id="@+id/sb_rlRoot"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -13,19 +13,19 @@
 
 
     <View
-        android:id="@+id/vCircle"
+        android:id="@+id/sb_vCircle"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:background="@drawable/rounded_borders_primary"
         android:elevation="6dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vBase"
-        app:layout_constraintBottom_toTopOf="@+id/vBase"
+        app:layout_constraintTop_toBottomOf="@+id/sb_vBase"
+        app:layout_constraintBottom_toTopOf="@+id/sb_vBase"
         />
 
     <View
-        android:id="@+id/vBase"
+        android:id="@+id/sb_vBase"
         android:layout_width="32dp"
         android:layout_height="52dp"
         android:background="@drawable/ic_tail_nav_main"
@@ -35,7 +35,7 @@
         />
 
     <ImageView
-        android:id="@+id/ivIcon"
+        android:id="@+id/sb_ivIcon"
         android:layout_width="20dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -43,8 +43,8 @@
         android:elevation="10dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/ic_hamburger_menu"
-        app:layout_constraintTop_toBottomOf="@+id/vCircle"
-        app:layout_constraintBottom_toTopOf="@+id/vCircle"
+        app:layout_constraintTop_toBottomOf="@+id/sb_vCircle"
+        app:layout_constraintBottom_toTopOf="@+id/sb_vCircle"
         app:layout_constraintEnd_toEndOf="parent"
         />
 

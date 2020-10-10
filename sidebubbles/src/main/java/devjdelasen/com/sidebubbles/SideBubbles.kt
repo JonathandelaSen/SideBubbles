@@ -53,8 +53,8 @@ class SideBubbles : RelativeLayout {
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
         val ta = context.obtainStyledAttributes(attrs, R.styleable.SideBubbles, 0, 0)
         try {
-            menuIconColor = ta.getColor(R.styleable.SideBubbles_side_bubbles_menu_color, ContextCompat.getColor(context, R.color.white))
-            bgColor = ta.getColor(R.styleable.SideBubbles_side_bubbles_bg_color, ContextCompat.getColor(context, R.color.colorPrimary))
+            menuIconColor = ta.getColor(R.styleable.SideBubbles_side_bubbles_menu_color, ContextCompat.getColor(context, R.color.sb_white))
+            bgColor = ta.getColor(R.styleable.SideBubbles_side_bubbles_bg_color, ContextCompat.getColor(context, R.color.sb_colorPrimary))
         } finally {
             ta.recycle()
         }
@@ -87,9 +87,9 @@ class SideBubbles : RelativeLayout {
 
         val itemId = View.generateViewId()
         item.id = itemId
-        clRoot.addView(item, clRoot.childCount-1)
+        sb_clRoot.addView(item, sb_clRoot.childCount-1)
         items.add(item)
-        getConstraints(itemId, if (items.size == 1) sbb.id else items[items.size-2].id).applyTo(clRoot)
+        getConstraints(itemId, if (items.size == 1) sb_sbb.id else items[items.size-2].id).applyTo(sb_clRoot)
         addListener(item)
     }
 
@@ -126,12 +126,12 @@ class SideBubbles : RelativeLayout {
     }
 
     private fun setDefaultView() {
-        sbb.set(menuIconColor, bgColor)
+        sb_sbb.set(menuIconColor, bgColor)
     }
 
     private fun getConstraints(id: Int, idToBeAbove: Int): ConstraintSet {
         val set = ConstraintSet()
-        set.clone(clRoot)
+        set.clone(sb_clRoot)
         set.connect(
             id,
             ConstraintSet.END,
@@ -162,12 +162,12 @@ class SideBubbles : RelativeLayout {
             starOpenAnimations()
         }
         val doubleTapPrevent = Runnable {
-            clRoot.isEnabled = true
+            sb_clRoot.isEnabled = true
         }
         val doubleTapHandler: Handler? = Handler()
 
 
-        clRoot.setOnTouchListener(object : View.OnTouchListener {
+        sb_clRoot.setOnTouchListener(object : View.OnTouchListener {
 
             override fun onTouch(view: View?, event: MotionEvent?): Boolean {
                 when (event?.action) {
@@ -176,7 +176,7 @@ class SideBubbles : RelativeLayout {
                         return true
                     }
                     MotionEvent.ACTION_UP -> {
-                        clRoot.isEnabled = false
+                        sb_clRoot.isEnabled = false
                         doubleTapHandler?.postDelayed(doubleTapPrevent, 200);
                         handlerLongClick?.removeCallbacks(mLongPressed);
                         if (isLongPress) {
@@ -311,7 +311,7 @@ class SideBubbles : RelativeLayout {
     }
 
     private fun activeMenuAnimation() {
-        clRoot.animate()
+        sb_clRoot.animate()
             .setInterpolator(AccelerateInterpolator())
             .setDuration(100)
             .translationX(0f)
@@ -319,7 +319,7 @@ class SideBubbles : RelativeLayout {
     }
 
     private fun deactivateMenuAnimation() {
-        clRoot.animate()
+        sb_clRoot.animate()
             .setInterpolator(AccelerateInterpolator())
             .setDuration(100)
             .translationX(convertToPx(20).toFloat())

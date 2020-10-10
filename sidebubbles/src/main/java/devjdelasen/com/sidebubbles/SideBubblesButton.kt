@@ -44,13 +44,13 @@ internal class SideBubblesButton : ConstraintLayout {
     }
 
     fun set(icColor: Int, bgColor: Int) {
-        ImageViewCompat.setImageTintList(ivIcon, ColorStateList.valueOf(icColor));
-        //vCircle.backgroundTintList = ContextCompat.getColorStateList(context, bgColor)
-        vCircle.background.setTint(bgColor)
+        ImageViewCompat.setImageTintList(sb_ivIcon, ColorStateList.valueOf(icColor));
+        //sb_vCircle.backgroundTintList = ContextCompat.getColorStateList(context, bgColor)
+        sb_vCircle.background.setTint(bgColor)
 
 
         //vBase.backgroundTintList = ContextCompat.getColorStateList(context, bgColor)
-        vBase.background.setTint(bgColor)
+        sb_vBase.background.setTint(bgColor)
 
     }
 

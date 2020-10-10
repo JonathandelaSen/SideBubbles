@@ -9,7 +9,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clRoot"
+        android:id="@+id/sb_clRoot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -19,7 +19,7 @@
         >
 
         <devjdelasen.com.sidebubbles.SideBubblesButton
-            android:id="@+id/sbb"
+            android:id="@+id/sb_sbb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"

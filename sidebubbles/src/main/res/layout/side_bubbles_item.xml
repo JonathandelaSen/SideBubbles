@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/flRoot"
+    android:id="@+id/sb_flRoot"
     android:layout_width="42dp"
     android:layout_height="42dp"
     android:layout_marginBottom="14dp"
@@ -12,7 +12,7 @@
     >
 
     <ImageView
-        android:id="@+id/ivIcon"
+        android:id="@+id/sb_ivIcon"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
         android:layout_gravity="center"
